@@ -27,7 +27,7 @@ eps0 = 8.8541878128e-12  # Фарады на метр (пермиитивнос�
 # ------------------------------
 
 d_pmV_list = [10.0, 15.0]            # pm/V (10 и 15 pm/V)
-R_big_um_list = [5.0, 30.0]          # радиусы большого цилиндра в микронах
+R_big_um_list = [5.0, 20.0]          # радиусы большого цилиндра в микронах
 pressures_Pa = [1.0, 1e2, 1e3, 1e5]  # Pa: 1, 100, 1k, 100k
 eps_int_factor = 2.5                 # eps_int = eps_int_factor * eps0 (ориентировочно для пьезо-керамики)
 eps_ext_factor = 80.0                # вода ≈ 80 * eps0
@@ -100,6 +100,7 @@ for d_pmV in d_pmV_list:
                     "phi_array (V) (abs)": abs(phi_array_c),
                     "ratio (array/big)": abs(phi_array_c) / (abs(phi_big_c) + 1e-30),  # +eps для защиты от деления на 0
                     "V_single_simple (V)": V_single_simple,
+                    "E_ext_simple (B/m)": E_ext_simple,
                     "V_array_ideal (V)": V_array_ideal
                 })
 
